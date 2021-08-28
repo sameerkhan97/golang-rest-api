@@ -11,7 +11,8 @@ functions we will be defining so that they make subsequent calls to a database t
      * git clone
   
  - Run the app using
-     * in powershell use specific file name to run the project
+     * in powershell use "go mod vendor" to synch the vendor directories 
+     * now use specific file name to run the project
      * command go run main.go
 
  - Use POSTMAN for Testing
