@@ -26,6 +26,10 @@ type Author struct {
 
 var books []Book
 
+//home page
+func homepage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to the Book Store")
+}
 // Get all books
 func getBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -98,6 +102,7 @@ func main() {
 	books = append(books, Book{ID: "5", Isbn: "932023", Title: "Book Five", Author: &Author{Firstname: "Mark", Lastname: "Will"}})
 
 	// Route handles & endpoints
+	r.HandleFunc("/", homepage)
 	r.HandleFunc("/books", getBooks).Methods("GET")
 	r.HandleFunc("/books/{id}", getBook).Methods("GET")
 	r.HandleFunc("/books", createBook).Methods("POST")
