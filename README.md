@@ -1,4 +1,4 @@
-## rest-api-using-go-fiber
+## golang-rest-api
 In this repository we have built a complete CRUD REST API for books using golang that exposes GET, POST, DELETE and PUT endpoints that will subsequently allow 
 you to perform the full range of CRUD operations.
 
