@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
@@ -31,6 +31,7 @@ var books []Book
 func homepage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Welcome to the Book Store")
 }
+
 // Get all books
 func getBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -94,6 +95,7 @@ func deleteBook(w http.ResponseWriter, r *http.Request) {
 // Main function
 func main() {
 	// Init router
+	fmt.Println("Starting server...")
 	r := mux.NewRouter()
 
 	books = append(books, Book{ID: "1", Isbn: "438227", Title: "Book One", Author: &Author{Firstname: "John", Lastname: "Doe"}})
